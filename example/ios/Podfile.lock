@@ -1,0 +1,215 @@
+PODS:
+  - AKReactNative (0.59.9.2)
+  - AKTBJSONModel (1.0.0)
+  - ali_iot_plugin (0.0.1):
+    - ali_iot_plugin/ALiIM (= 0.0.1)
+    - Flutter
+    - MJExtension
+  - ali_iot_plugin/ALiIM (0.0.1):
+    - AKReactNative (= 0.59.9.2)
+    - AlicloudALBBOpenAccount (= 3.4.1.6)
+    - AlicloudSecurityGuardSDK (= 5.5.51)
+    - AlicloudSGMain (= 5.5.51)
+    - AlicloudSGSecurityBody (= 5.5.60)
+    - CocoaAsyncSocket (= 7.4.2)
+    - Flutter
+    - IMSAccount (= 1.2.1.4)
+    - IMSApiClient (= 1.6.9)
+    - IMSAuthentication (= 1.4.4)
+    - IMSBoneKit (= 1.3.11.11)
+    - IMSBreezeSDK (= 1.7.4)
+    - IMSDeviceCenter (= 1.15.0)
+    - IMSDeviceGateway (= 1.6.8)
+    - IMSIotSmart (= 1.2.9)
+    - IMSMobileChannel (= 1.6.12)
+    - IMSOtaBusinessSdk (= 1.6.3)
+    - IMSReactNativeExtension (= 1.0.2)
+    - IMSThingCapability (= 1.8.10)
+    - MJExtension
+    - MJRefresh (= 3.1.15)
+    - Reachability (= 3.2)
+    - ZipArchive (= 1.4.0)
+  - AlicloudALBBOpenAccount (3.4.1.6):
+    - AlicloudSecurityGuardSDK
+    - AlicloudSGMain
+    - AlicloudSGSecurityBody
+    - AlicloudUTDID (~> 1.1.0.16)
+    - IMSOpsTools (~> 1.0.1)
+  - AlicloudSecurityGuardSDK (5.5.51)
+  - AlicloudSGMain (5.5.51):
+    - AlicloudSecurityGuardSDK (= 5.5.51)
+  - AlicloudSGSecurityBody (5.5.60):
+    - AlicloudSecurityGuardSDK (= 5.5.51)
+    - AlicloudSGMain (= 5.5.51)
+  - AlicloudUTDID (1.1.0.19)
+  - CocoaAsyncSocket (7.4.2)
+  - Flutter (1.0.0)
+  - IMLCoapBase (1.7.5)
+  - IMSAccount (1.2.1.4):
+    - IMSBonePluginKit (~> 1.1.0)
+    - IMSLog (~> 1.0.4)
+  - IMSApiClient (1.6.9):
+    - IMSLog (~> 1.0.4)
+    - IMSOpsTools (~> 1.0.1)
+  - IMSAuthentication (1.4.4):
+    - IMSAccount (~> 1.2.1.1)
+    - IMSApiClient (~> 1.6.0)
+    - IMSLog (~> 1.0.4)
+  - IMSBoneKit (1.3.11.11):
+    - IMSAccount (~> 1.2.1.3)
+    - IMSApiClient (~> 1.6.1)
+    - IMSBoneLogUtil (~> 1.0.0)
+    - IMSBoneServiceCore (~> 1.1.4)
+    - IMSBoneServicePluginKit (~> 1.0.0)
+    - IMSBoneUserTrack (~> 1.0.0)
+    - IMSLog (~> 1.0.4)
+    - IMSRouter (~> 1.2.7)
+  - IMSBoneLogUtil (1.0.0):
+    - IMSBoneUserTrack (~> 1.0.0)
+    - IMSLog (~> 1.0.7)
+  - IMSBonePluginKit (1.1.0)
+  - IMSBoneServiceCore (1.1.9):
+    - IMSApiClient (~> 1.6.1)
+    - IMSBoneServicePluginKit (~> 1.0.0)
+    - IMSLog (~> 1.0.4)
+  - IMSBoneServicePluginKit (1.0.2)
+  - IMSBoneUserTrack (1.0.0)
+  - IMSBreezeSDK (1.7.4):
+    - IMSApiClient (~> 1.6.0)
+    - IMSDeviceGateway (~> 1.6.6)
+    - IMSLog (~> 1.0.4)
+    - IMSOpsTools (~> 1.0.1)
+    - LinkNetworkSDK (~> 1.0.3)
+  - IMSDeviceCenter (1.15.0):
+    - AKTBJSONModel (~> 1.0.0)
+    - IMLCoapBase (~> 1.7.2)
+    - IMSApiClient (~> 1.6.0)
+    - IMSBonePluginKit (~> 1.1.0)
+    - IMSLog (~> 1.0.4)
+    - IMSOpsTools (~> 1.0.1)
+    - LinkNetworkSDK (~> 1.0.6)
+  - IMSDeviceGateway (1.6.8):
+    - IMSMobileChannel (~> 1.6.6)
+  - IMSIotSmart (1.2.9):
+    - IMSApiClient (~> 1.6.0)
+    - IMSAuthentication (~> 1.4.1)
+    - IMSLog (~> 1.0.4)
+  - IMSLog (1.0.8)
+  - IMSMobileChannel (1.6.12):
+    - AlicloudUTDID (~> 1.1.0.16)
+    - IMSApiClient (~> 1.6.0)
+    - IMSLog (~> 1.0.4)
+  - IMSOpsTools (1.0.4)
+  - IMSOtaBusinessSdk (1.6.3):
+    - IMSApiClient (~> 1.6.0)
+    - IMSLog (~> 1.0.4)
+    - LinkNetworkSDK (~> 1.0.3)
+  - IMSReactNativeExtension (1.0.2)
+  - IMSRouter (1.2.8):
+    - IMSBoneLogUtil (~> 1.0.0)
+    - IMSLog (~> 1.0.4)
+  - IMSThingCapability (1.8.10):
+    - AKTBJSONModel (~> 1.0.0)
+    - IMLCoapBase (~> 1.7.2)
+    - IMSApiClient (~> 1.6.0)
+    - IMSAuthentication (~> 1.4.1)
+    - IMSBonePluginKit (~> 1.1.0)
+    - IMSDeviceGateway (~> 1.6.6)
+    - IMSLog (~> 1.0.4)
+    - IMSMobileChannel (~> 1.6.6)
+  - LinkNetworkSDK (1.0.6):
+    - IMSLog (~> 1.0.4)
+  - MJExtension (3.4.1)
+  - MJRefresh (3.1.15)
+  - Reachability (3.2)
+  - ZipArchive (1.4.0)
+
+DEPENDENCIES:
+  - ali_iot_plugin (from `.symlinks/plugins/ali_iot_plugin/ios`)
+  - Flutter (from `Flutter`)
+
+SPEC REPOS:
+  https://github.com/aliyun/aliyun-specs.git:
+    - AKReactNative
+    - AKTBJSONModel
+    - AlicloudALBBOpenAccount
+    - AlicloudSecurityGuardSDK
+    - AlicloudSGMain
+    - AlicloudSGSecurityBody
+    - AlicloudUTDID
+    - IMLCoapBase
+    - IMSAccount
+    - IMSApiClient
+    - IMSAuthentication
+    - IMSBoneKit
+    - IMSBoneLogUtil
+    - IMSBonePluginKit
+    - IMSBoneServiceCore
+    - IMSBoneServicePluginKit
+    - IMSBoneUserTrack
+    - IMSBreezeSDK
+    - IMSDeviceCenter
+    - IMSDeviceGateway
+    - IMSIotSmart
+    - IMSLog
+    - IMSMobileChannel
+    - IMSOpsTools
+    - IMSOtaBusinessSdk
+    - IMSReactNativeExtension
+    - IMSRouter
+    - IMSThingCapability
+    - LinkNetworkSDK
+  https://github.com/CocoaPods/Specs.git:
+    - CocoaAsyncSocket
+    - MJExtension
+    - MJRefresh
+    - Reachability
+    - ZipArchive
+
+EXTERNAL SOURCES:
+  ali_iot_plugin:
+    :path: ".symlinks/plugins/ali_iot_plugin/ios"
+  Flutter:
+    :path: Flutter
+
+SPEC CHECKSUMS:
+  AKReactNative: e9a0ac58f2b8c7c00c515c03f0044708db756eb0
+  AKTBJSONModel: 143a89529ee441682bb3f61b1b82d5b227e0f28d
+  ali_iot_plugin: 953f529f8309a71a561b0e44010664ed8b6fdf74
+  AlicloudALBBOpenAccount: 5041802fda8bd407f7622e6f048a6db3a83fc199
+  AlicloudSecurityGuardSDK: 337643489f49a06f46e94ae97a5c5b17e5e49680
+  AlicloudSGMain: aee8ffffe56b1168b182bebd6fcc9279171eb24e
+  AlicloudSGSecurityBody: 103e5bfef2e369ae95c89d9204eeb55b7ba0f0b4
+  AlicloudUTDID: 79f509c3e997ef85fe307f8bfb2bb3be27f7e205
+  CocoaAsyncSocket: f5783bdedd232d91b89769bc4b5a1580aed518ad
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  IMLCoapBase: ad71dd7ed9570047c6f8ab39640174f34097a82e
+  IMSAccount: ab5d612e37302f385d6a6baf51858bd3c2628991
+  IMSApiClient: 1bb16e0e6c573c7804d82d58ee60afabb6358b4a
+  IMSAuthentication: 2bbdf8d9302279b61772c84a5e785dcf14399865
+  IMSBoneKit: 2315d65015e6937d428440b95d94f9d3aa8e138a
+  IMSBoneLogUtil: 3e44ee75551c5a4a52591bfe545cc5694c1d88c2
+  IMSBonePluginKit: 2e463b149ecb7e8ebdc8351516372d561b0f49db
+  IMSBoneServiceCore: af2051f30ef8f53f62271538180baaadda33b314
+  IMSBoneServicePluginKit: ac0098f8d5b9565cf9ad4ecbfa0e7d19c92228dd
+  IMSBoneUserTrack: c4895887e4eee1ac2a57c1671c2b3d4913959cc1
+  IMSBreezeSDK: 5991349c051d6552d3d9a5a6a630fb8a76206c0f
+  IMSDeviceCenter: b1bddefe035f9e22999aabff4ce8179dd6a3d4eb
+  IMSDeviceGateway: 7678d72d3c785d317d6feada6ca19909dc49dcf2
+  IMSIotSmart: 72378c0ed2b9cf5c4b53408e3c894992a91f216a
+  IMSLog: d17ae9fa27c5a31ef5a76ed4e233fd4c89404508
+  IMSMobileChannel: 7e990265b141bff638f99f89f3a724e8927e5071
+  IMSOpsTools: 558284234449328bd0a96769d6781a668e221344
+  IMSOtaBusinessSdk: 7f24178ba41fb33f14f3742f3ba927c385b2534c
+  IMSReactNativeExtension: 7fcf52c61fad90846f7f2667e788f746a1edb0c3
+  IMSRouter: 160c2d13eaf74af953969745f86914e41b30030d
+  IMSThingCapability: 7d197bc60c51cff0e65075ddc16223a32a08d8a8
+  LinkNetworkSDK: d754fce01b3b858eb78e6ceeef490ef6606d328c
+  MJExtension: 21c5f6f8c4d5d8844b7ae8fbae08fed0b501f961
+  MJRefresh: 9af70f5f9327a2cf87f0fb5929f35fcc2fa638ea
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+  ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
+
+PODFILE CHECKSUM: 6d9183f75c0d1edb0a337f9da2fa9747f4866a4e
+
+COCOAPODS: 1.11.2
