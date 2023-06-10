@@ -35,66 +35,89 @@ Pod::Spec.new do |s|
   # source 'https://github.com/aliyun/aliyun-specs.git'
   
   s.subspec 'ALiIM' do |ss|  
-    #初始化Smart
-    ss.dependency 'IMSIotSmart', '1.2.3'
+    # #初始化Smart
+    # ss.dependency 'IMSIotSmart', '1.2.9'
       
-    # OA
-    ss.dependency 'AlicloudALBBOpenAccount', '3.4.0.47'
+    # # OA
+    # ss.dependency 'AlicloudALBBOpenAccount', '3.4.1.6'
     
-    #facebook依赖
-    ss.dependency 'FBSDKLoginKit', '4.29.0'
-    ss.dependency 'FBSDKCoreKit', '4.29.0'
-    #google依赖:cocoapods 大于1.2.0版本,请注释 ToolboxForMac 和 GTMOAuth2 即可编辑通过
-    ss.dependency 'GoogleSignIn', '4.0.2'
-    #pod 'ToolboxForMac', :path => 'LocalPods/ToolboxForMac.podspec'
-    #pod 'GTMOAuth2', '1.1.4'
-    
-    # 长连接
-    ss.dependency 'IMSMobileChannel', '1.6.12'
-    
-    # API 通道
-    ss.dependency 'IMSApiClient', '1.6.7'
-    
-    # 用户统一身份认证
-    ss.dependency 'IMSAuthentication', '1.4.2'
-    
-    # 移动推送:1.9.5.5 适配iOS13
-    ss.dependency 'AlicloudPushIoT', '1.9.5.5'
-    # s.dependency 'AlicloudPushIoT', '1.9.5.5-noccp'
+    # #facebook依赖
+    # ss.dependency 'FBSDKLoginKit', '4.29.0'
+    # ss.dependency 'FBSDKCoreKit', '4.29.0'
+    # #google依赖:cocoapods 大于1.2.0版本,请注释 ToolboxForMac 和 GTMOAuth2 即可编辑通过
+    # ss.dependency 'GoogleSignIn', '4.0.2'
+    # #pod 'ToolboxForMac', :path => 'LocalPods/ToolboxForMac.podspec'
+    # #pod 'GTMOAuth2', '1.1.4'
+    # ss.dependency 'IMSAccount', '1.2.1.4'
 
-    # 专有云推送
-    ss.dependency 'IMSPCloudPush', '1.0.2'
-    ss.dependency 'IMSPCloudNetwork', '1.0.0'
     
-    # BoneMoible 容器
-    ss.dependency 'IMSBoneKit', '1.3.11.2'
-    ss.dependency 'IMSReactNativeExtension', '1.0.2'
-    ss.dependency 'AKReactNative', '0.59.9.2'
-    ss.dependency 'MJRefresh', '3.1.15'
-    ss.dependency 'ZipArchive', '1.4.0'
+    # # 长连接
+    # ss.dependency 'IMSMobileChannel', '1.6.12'
     
-    #设备模型
-    ss.dependency 'IMSThingCapability', '1.8.9'
-    ss.dependency 'IMSBreezeSDK', '1.7.4'
-    ss.dependency 'AKTBJSONModel', '~> 1.0.0'
+    # # API 通道
+    # ss.dependency 'IMSApiClient', '1.6.9'
     
-    # 蓝牙
-    ss.dependency 'IMSOtaBusinessSdk', '1.6.3'
+    # # 用户统一身份认证
+    # ss.dependency 'IMSAuthentication', '1.4.4'
     
-    #配网
-    ss.dependency 'IMSDeviceCenter', '1.12.9'
-    ss.dependency 'CocoaAsyncSocket', '7.4.2'
-    ss.dependency 'Reachability', '3.2'
-    ss.dependency 'IMSDeviceGateway', '1.6.8'
+    # # 移动推送:1.9.5.5 适配iOS13
+    # ss.dependency 'AlicloudPushIoT', '1.9.5.5'
+    # # s.dependency 'AlicloudPushIoT', '1.9.5.5-noccp'
 
-    # 其他外部第三方库
-    ss.dependency 'SDWebImage', '5.4.0'
-    ss.dependency 'Mantle', '2.1.0'
+    # # 专有云推送
+    # ss.dependency 'IMSPCloudPush', '1.0.2'
+    # ss.dependency 'IMSPCloudNetwork', '1.0.0'
+    
+    # # BoneMoible 容器
+    # ss.dependency 'IMSBoneKit', '1.3.11.11'
+    # ss.dependency 'IMSReactNativeExtension', '1.0.2'
+    # ss.dependency 'AKReactNative', '0.59.9.2'
+    # ss.dependency 'MJRefresh', '3.1.15'
+    # ss.dependency 'ZipArchive', '1.4.0'
+    
+    # #设备模型
+    # ss.dependency 'IMSThingCapability', '1.8.10'
+    # ss.dependency 'IMSBreezeSDK', '1.7.4'
+    # ss.dependency 'AKTBJSONModel', '~> 1.0.0'
+    
+    # # 蓝牙
+    # ss.dependency 'IMSOtaBusinessSdk', '1.6.3'
+    
+    # #配网
+    # ss.dependency 'IMSDeviceCenter', '1.12.9'
+    # ss.dependency 'CocoaAsyncSocket', '7.4.2'
+    # ss.dependency 'Reachability', '3.2'
+    # ss.dependency 'IMSDeviceGateway', '1.6.8'
 
-    # 阿里插件多余的
-    ss.dependency 'AlicloudSecurityGuardSDK', '5.4.165'
-    ss.dependency 'AlicloudSGSecurityBody', '5.4.94'
-    ss.dependency 'AlicloudSGMain', '5.4.165'
+    # # 其他外部第三方库
+    # ss.dependency 'SDWebImage', '5.4.0'
+    # ss.dependency 'Mantle', '2.1.0'
+
+    # # 阿里插件多余的
+    # ss.dependency 'AlicloudSecurityGuardSDK', '5.5.999'
+    # ss.dependency 'AlicloudSGSecurityBody', '5.5.999'
+    # ss.dependency 'AlicloudSGMain', '5.5.999'
+  ss.dependency 'IMSApiClient', '1.6.9'
+  ss.dependency 'IMSAuthentication', '1.4.4'
+  ss.dependency 'IMSIotSmart', '1.2.9'
+  ss.dependency  'AlicloudSecurityGuardSDK', '5.5.51'
+  ss.dependency  'AlicloudSGSecurityBody', '5.5.60'
+  ss.dependency  'AlicloudSGMain', '5.5.51'
+  ss.dependency 'IMSAccount', '1.2.1.4'
+  ss.dependency 'AlicloudALBBOpenAccount', '3.4.1.6'
+  ss.dependency 'IMSThingCapability', '1.8.10'
+  ss.dependency 'IMSMobileChannel', '1.6.12'
+  ss.dependency 'IMSBoneKit', '1.3.11.11'
+  ss.dependency 'AKReactNative', '0.59.9.2'
+  ss.dependency 'MJRefresh', '3.1.15'
+  ss.dependency 'ZipArchive', '1.4.0'
+  ss.dependency 'IMSReactNativeExtension', '1.0.2'
+  ss.dependency 'IMSDeviceCenter', '1.15.0'
+  ss.dependency 'CocoaAsyncSocket', '7.4.2'
+  ss.dependency 'Reachability', '3.2'
+  ss.dependency 'IMSBreezeSDK', '1.7.4'
+  ss.dependency 'IMSOtaBusinessSdk', '1.6.3'
+  ss.dependency 'IMSDeviceGateway', '1.6.8'
   end
 
   # 转换速度快、使用简单方便的字典转模型框架
