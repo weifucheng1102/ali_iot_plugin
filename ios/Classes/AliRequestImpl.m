@@ -6,7 +6,7 @@
 #import "IMSLifeLog.h"
 #import <IMSApiClient/IMSApiClient.h>
 #import <IMSAuthentication/IMSAuthentication.h>
-#import <CloudPushSDK/CloudPushSDK.h>
+//#import <CloudPushSDK/CloudPushSDK.h>
 #import <ALBBOpenAccountCloud/ALBBOpenAccountSDK.h>
 #import <ALBBOpenAccountCloud/ALBBOpenAccountUser.h>
 #import <AlinkAppExpress/AlinkAppExpress.h>
@@ -79,25 +79,25 @@ NSString *ServerErrorDomain = @"ServerErrorDomain";
 }
 
 + (void)handleLogout {
-    NSString *deviceId = [CloudPushSDK getDeviceId];
-    [AliRequestImpl unbindAPNSChannelWithDeviceId:deviceId completionHandler:^(NSError *error) {
-        if (error) {
-            IMSLifeLogVerbose(@"解绑移动推送失败");
-        }
-    }];
-
-    NSString *topic = @"/account/unbind";
-    [[LKAppExpress sharedInstance] invokeWithTopic:topic opts:nil params:@{} respHandler:^(LKAppExpResponse *_Nonnull response) {
-        if (![response successed]) {
-            IMSLifeLogVerbose(@"解绑长连接推送失败");
-        }
-    }];
-
-    //发送一个退出登通知，便于其他业务处理退出时候需要执行的操作
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"IMS_OPENACCOUNT_USER_LOGOUT_OUT" object:nil];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [[IMSAccountService sharedService] logout];
-    });
+//    NSString *deviceId = [CloudPushSDK getDeviceId];
+//    [AliRequestImpl unbindAPNSChannelWithDeviceId:deviceId completionHandler:^(NSError *error) {
+//        if (error) {
+//            IMSLifeLogVerbose(@"解绑移动推送失败");
+//        }
+//    }];
+//
+//    NSString *topic = @"/account/unbind";
+//    [[LKAppExpress sharedInstance] invokeWithTopic:topic opts:nil params:@{} respHandler:^(LKAppExpResponse *_Nonnull response) {
+//        if (![response successed]) {
+//            IMSLifeLogVerbose(@"解绑长连接推送失败");
+//        }
+//    }];
+//
+//    //发送一个退出登通知，便于其他业务处理退出时候需要执行的操作
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"IMS_OPENACCOUNT_USER_LOGOUT_OUT" object:nil];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [[IMSAccountService sharedService] logout];
+//    });
 
 }
 
