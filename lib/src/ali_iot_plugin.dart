@@ -201,7 +201,7 @@ class DispatchNetAPI {
   ///
   static Future<bool?> startAddDevice(
     String linkType,
-    callback(String stage, dynamic stageData), {
+    callback(dynamic stage, dynamic stageData), {
     String? productKey,
     String? productId,
     String? id,
