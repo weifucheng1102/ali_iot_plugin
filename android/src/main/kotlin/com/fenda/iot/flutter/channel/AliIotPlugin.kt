@@ -132,7 +132,8 @@ public class AliIotPlugin : FlutterPlugin, MethodCallHandler, BasicMessageChanne
             }
 
             "startDiscovery" -> {
-                DispatchNetAPI.startDiscovery(context) { discoveryType, deviceList ->
+                val enumSet: EnumSet<DiscoveryType> = EnumSet.of<DiscoveryType>(DiscoveryType.BLE_ENROLLEE_DEVICE)
+                DispatchNetAPI.startDiscovery(context,,enumSet,null) { discoveryType, deviceList ->
                     log("onMethodCall startDiscovery", " discoveryType-> $discoveryType ,deviceList-> $deviceList")
                     eventSinkMap["startDiscovery"]?.success(mapOf("discoveryType" to mapOf("type" to discoveryType.type,
                             "description" to discoveryType.description), "deviceList" to deviceList).toJSONObject(true))
