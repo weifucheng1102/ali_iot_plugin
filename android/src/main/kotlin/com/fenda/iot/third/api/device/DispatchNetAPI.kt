@@ -146,7 +146,7 @@ object DispatchNetAPI {
                                 val ssid = arguments.optString("ssid")
                                 val password = arguments.optString("password")
                                 if (!ssid.isNullOrBlank() && !password.isNullOrBlank()) {
-                                    AddDeviceBiz.getInstance().toggleProvision(ssid, password, 60)
+                                    AddDeviceBiz.getInstance().toggleProvision(ssid, password, 120)
                                 } else {
                                     log("startAddDevice", "toggleProvision->", "had error ssid=>$ssid password=>$password")
                                 }
