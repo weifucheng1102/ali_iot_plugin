@@ -87,7 +87,7 @@ fun JSONObject.toDeviceInfo(): DeviceInfo {
     }
     val protocolVersion = optString("protocolVersion");
     if (!protocolVersion.isNullOrBlank()) {
-        deviceInfo.linkType = protocolVersion
+        deviceInfo.protocolVersion = protocolVersion
     }
     return deviceInfo;
 }
