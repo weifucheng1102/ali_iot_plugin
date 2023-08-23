@@ -208,8 +208,8 @@ class DispatchNetAPI {
     String? protocolVersion,
     ValueGetter<Future<Map<String, String>>>? getWifi,
   }) async {
-    assert(linkType == "ForceAliLinkTypeBroadcast" && getWifi != null, "一键配网 需要提供wifi和密码");
-    assert(linkType == "ForceAliLinkTypeBroadcast" && productKey != null, "一键配网 需要提供码productKey");
+    // assert(linkType == "ForceAliLinkTypeBroadcast" && getWifi != null, "一键配网 需要提供wifi和密码");
+    // assert(linkType == "ForceAliLinkTypeBroadcast" && productKey != null, "一键配网 需要提供码productKey");
     Map data = {"productKey": productKey, "productId": productId, "id": id, "linkType": linkType, "protocolVersion": protocolVersion};
     if (AliIotPlugin.debug) {
       print("$TAG : startAddDevice $data");
