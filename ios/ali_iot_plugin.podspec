@@ -55,7 +55,7 @@ Pod::Spec.new do |s|
     # ss.dependency 'IMSMobileChannel', '1.6.12'
     
     # # API 通道
-    # ss.dependency 'IMSApiClient', '1.6.9'
+    # ss.dependency 'IMSApiClient', '1.7.0'
     
     # # 用户统一身份认证
     # ss.dependency 'IMSAuthentication', '1.4.4'
