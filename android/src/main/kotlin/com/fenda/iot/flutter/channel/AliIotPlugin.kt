@@ -2,6 +2,7 @@ package com.fenda.iot.flutter.channel
 
 import android.content.Context
 import androidx.annotation.NonNull;
+import com.aliyun.alink.business.devicecenter.api.discovery.DiscoveryType
 import com.aliyun.alink.linksdk.tmp.api.DeviceManager
 import com.aliyun.iot.aep.sdk.IoTSmart
 import com.aliyun.iot.aep.sdk.login.ILoginCallback
@@ -19,6 +20,7 @@ import io.flutter.plugin.common.*
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 import io.flutter.plugin.common.PluginRegistry.Registrar
+import java.util.EnumSet
 
 
 /** AliIotPlugin */
@@ -133,7 +135,7 @@ public class AliIotPlugin : FlutterPlugin, MethodCallHandler, BasicMessageChanne
 
             "startDiscovery" -> {
                 val enumSet: EnumSet<DiscoveryType> = EnumSet.of<DiscoveryType>(DiscoveryType.BLE_ENROLLEE_DEVICE)
-                DispatchNetAPI.startDiscovery(context,,enumSet,null) { discoveryType, deviceList ->
+                DispatchNetAPI.startDiscovery(context,enumSet,null) { discoveryType, deviceList ->
                     log("onMethodCall startDiscovery", " discoveryType-> $discoveryType ,deviceList-> $deviceList")
                     eventSinkMap["startDiscovery"]?.success(mapOf("discoveryType" to mapOf("type" to discoveryType.type,
                             "description" to discoveryType.description), "deviceList" to deviceList).toJSONObject(true))
