@@ -10,7 +10,8 @@ class LoginBusiness {
     }
 
     static func logout() {
-        AliRequestImpl.handleLogout()
+        //AliRequestImpl.handleLogout()
+        IMSAccountService.shared().logout();
     }
 
     static func login(_ authCode: String,completionHandler: (([AnyHashable : Any]?, Error?) -> Void)!) {
