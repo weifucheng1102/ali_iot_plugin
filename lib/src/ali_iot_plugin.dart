@@ -9,11 +9,14 @@ const String TAG = "AliIotPlugin";
 class AliIotPlugin {
   static bool debug = true;
 
-  static const EventChannel _eventChannel = const EventChannel('ali_iot_plugin_event', JSONMethodCodec());
+  static const EventChannel _eventChannel =
+      const EventChannel('ali_iot_plugin_event', JSONMethodCodec());
 
-  static const MethodChannel _methodChannel = const MethodChannel('ali_iot_plugin_method', JSONMethodCodec());
+  static const MethodChannel _methodChannel =
+      const MethodChannel('ali_iot_plugin_method', JSONMethodCodec());
 
-  static const BasicMessageChannel _basicMessageChannel = const BasicMessageChannel('ali_iot_plugin_message', JSONMessageCodec());
+  static const BasicMessageChannel _basicMessageChannel =
+      const BasicMessageChannel('ali_iot_plugin_message', JSONMessageCodec());
 
   static EventChannel get eventChannel => _eventChannel;
 
@@ -39,7 +42,8 @@ class CommonAPI {
     if (AliIotPlugin.debug) {
       print("$TAG : platformVersion");
     }
-    final String? version = await AliIotPlugin.methodChannel.invokeMethod('getPlatformVersion');
+    final String? version =
+        await AliIotPlugin.methodChannel.invokeMethod('getPlatformVersion');
     return version;
   }
 
@@ -135,7 +139,9 @@ class DispatchNetAPI {
     if (AliIotPlugin.debug) {
       print("$TAG : startDiscovery");
     }
-    _startDiscoverySubscription = AliIotPlugin.eventChannel.receiveBroadcastStream("startDiscovery").listen((event) {
+    _startDiscoverySubscription = AliIotPlugin.eventChannel
+        .receiveBroadcastStream("startDiscovery")
+        .listen((event) {
       if (event != null) {
         print("$TAG : startDiscovery event: " + event.toString());
         if (event is Map<String, dynamic>) {
@@ -166,7 +172,9 @@ class DispatchNetAPI {
     if (AliIotPlugin.debug) {
       print("$TAG : listenGatewayPermit");
     }
-    _gatewayPermitSubscription = AliIotPlugin.eventChannel.receiveBroadcastStream("gatewayPermit").listen((event) {
+    _gatewayPermitSubscription = AliIotPlugin.eventChannel
+        .receiveBroadcastStream("gatewayPermit")
+        .listen((event) {
       if (event != null) {
         print("$TAG : listenGatewayPermit event: " + event.toString());
         var data = jsonDecode(event);
@@ -210,11 +218,19 @@ class DispatchNetAPI {
   }) async {
     // assert(linkType == "ForceAliLinkTypeBroadcast" && getWifi != null, "一键配网 需要提供wifi和密码");
     // assert(linkType == "ForceAliLinkTypeBroadcast" && productKey != null, "一键配网 需要提供码productKey");
-    Map data = {"productKey": productKey, "productId": productId, "id": id, "linkType": linkType, "protocolVersion": protocolVersion};
+    Map data = {
+      "productKey": productKey,
+      "productId": productId,
+      "id": id,
+      "linkType": linkType,
+      "protocolVersion": protocolVersion
+    };
     if (AliIotPlugin.debug) {
       print("$TAG : startAddDevice $data");
     }
-    _dispatchNetSubscription = AliIotPlugin.eventChannel.receiveBroadcastStream("startAddDevice").listen((event) {
+    _dispatchNetSubscription = AliIotPlugin.eventChannel
+        .receiveBroadcastStream("startAddDevice")
+        .listen((event) {
       if (event != null) {
         print("$TAG : startAddDevice event: " + event.toString());
         if (event is List) {
@@ -228,10 +244,15 @@ class DispatchNetAPI {
               stageData = ""; //String
               break;
             case "onProvisionStatus":
-              stageData = {"code": event[1], "message": event[2], "extraParams": event[3]}; //Map
+              stageData = {
+                "code": event[1],
+                "message": event[2],
+                "extraParams": event[3]
+              }; //Map
               break;
             case "onProvisionedResult":
-              var temp = event.last as Map; //{"isSuccess":bool,"deviceInfo":String."errorCode":String}
+              var temp = event.last
+                  as Map; //{"isSuccess":bool,"deviceInfo":String."errorCode":String}
               stageData = {
                 "isSuccess": temp["isSuccess"],
                 "deviceInfo": jsonDecode(temp["deviceInfo"] ?? "{}"),
@@ -276,23 +297,29 @@ class DispatchNetAPI {
     AliIotPlugin.methodChannel.invokeMethod('openSystemWiFi');
   }
 
-  static Future<Map?> getDeviceToken() async {
+  ///因为安卓配网的时候带着 token,所以只有 ios 用了这个方法。 如果安卓要用， 可能需要统一修改返回值
+  static Future<Map?> getDeviceToken(
+    String productKey,
+    String deviceName,
+  ) async {
     if (AliIotPlugin.debug) {
       print("$TAG : getDeviceToken");
     }
-    var result = await AliIotPlugin.methodChannel.invokeMethod('getDeviceToken');
-    if (result is Map<String, dynamic>) {
-      final data = jsonDecode(result["data"]);
-      return data;
-    }
-    return null;
+    var result =
+        await AliIotPlugin.methodChannel.invokeMethod('getDeviceToken', {
+      "productKey": productKey,
+      "deviceName": deviceName,
+    });
+    return result;
   }
 
-  static Future<dynamic> bindByToken(String productKey, String deviceName, String token) async {
+  static Future<dynamic> bindByToken(
+      String productKey, String deviceName, String token) async {
     if (AliIotPlugin.debug) {
       print("$TAG : bindByToken");
     }
-    return AliIotPlugin.methodChannel.invokeMethod('bindByToken', {"productKey": productKey, "deviceName": deviceName, "token": token});
+    return AliIotPlugin.methodChannel.invokeMethod('bindByToken',
+        {"productKey": productKey, "deviceName": deviceName, "token": token});
   }
 }
 
@@ -353,7 +380,9 @@ class DevicePanelAPI {
     if (AliIotPlugin.debug) {
       print("$TAG : listenDevicePanelEvent");
     }
-    _devicePanelEventSubscription = AliIotPlugin.eventChannel.receiveBroadcastStream("subDevicePanelEvent").listen((event) {
+    _devicePanelEventSubscription = AliIotPlugin.eventChannel
+        .receiveBroadcastStream("subDevicePanelEvent")
+        .listen((event) {
       if (event != null) {
         print("$TAG : listenDevicePanelEvent event: " + event.toString());
         var data = jsonDecode(event);
