@@ -1,7 +1,7 @@
 import Flutter
 import UIKit
 import CoreLocation
-
+import IMLDeviceCenter
 @available(macCatalyst 13.0, *)
 public class SwiftAliIotPlugin: NSObject, FlutterPlugin, FlutterStreamHandler {
     static var DEBUG: Bool = false
@@ -240,13 +240,19 @@ public class SwiftAliIotPlugin: NSObject, FlutterPlugin, FlutterStreamHandler {
         case "openSystemWiFi":
             DispatchNetAPI.openSystemWiFi()
             result(true)
-//      case  "getDeviceToken" :
-//
-//          let productKey = call.argument<String>("productKey")
-//          let deviceName = call.argument<String>("deviceName")
-//          if (productKey != null && deviceName != null) {
-//            DispatchNetAPI.getDeviceToken(context, productKey, deviceName)
-//          }
+      case  "getDeviceToken" :
+            guard let data = call.arguments as? [String: Any] else {
+                result(FlutterError(code: "errArgs", message: "getDeviceToken Error: Invalid Arguments", details: call.arguments.debugDescription))
+                return
+            }
+            log("getDeviceToken data-> \(data)")
+
+            let productKey: String? = data["productKey"] as? String;
+            let deviceName: String? = data["deviceName"] as? String;
+            IMLLocalDeviceMgr.shared().getDeviceToken(productKey, deviceName: deviceName, timeout: 20) { token, success in
+                result(["success":success,"token":token as Any]);
+            }
+       
 //
 //      case  "bindByToken" :
 //
